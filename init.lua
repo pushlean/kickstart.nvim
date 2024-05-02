@@ -84,6 +84,10 @@ I hope you enjoy your Neovim journey,
 P.S. You can delete this when you're done too. It's your config now! :)
 --]]
 
+vim.cmd 'set runtimepath^=~/.vim runtimepath+=~/.vim/after'
+vim.o.packpath = vim.o.runtimepath
+vim.cmd 'source ~/.vimrc-keys'
+
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
