@@ -1,11 +1,13 @@
 return {
   {
     'FabijanZulj/blame.nvim',
-    cmd = { 'BlameToggle' },
+    lazy = false,
     config = function()
-      require('blame').setup {
-        date_format = '%Y.%m.%d',
-      }
+      require('blame').setup {}
     end,
+    opts = {
+      date_format = '%Y.%m.%d',
+      merge_consecutive = true,
+    },
   },
 }
