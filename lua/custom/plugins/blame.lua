@@ -1,3 +1,4 @@
+-- why do i need this if gitsigns also shows blame?
 return {
   {
     'FabijanZulj/blame.nvim',
