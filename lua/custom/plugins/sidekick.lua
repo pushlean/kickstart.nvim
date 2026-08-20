@@ -21,6 +21,13 @@ return {
     end,
     keys = {
       {
+        '<C-.>',
+        function()
+          require('sidekick.cli').toggle { name = 'codex' }
+        end,
+        desc = 'Toggle Codex',
+      },
+      {
         '<leader>aa',
         function()
           require('sidekick.cli').toggle { name = 'codex' }
