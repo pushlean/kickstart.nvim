@@ -1,6 +1,24 @@
 return {
   {
     'folke/sidekick.nvim',
+    dependencies = {
+      {
+        'folke/snacks.nvim',
+        opts = {
+          picker = {
+            kinds = {
+              sidekick_prompt = {
+                matcher = { sort_empty = true },
+                transform = function(item)
+                  item.prompt_priority = item.name == 'line' and 0 or 1
+                end,
+                sort = { fields = { 'score:desc', 'prompt_priority', 'idx' } },
+              },
+            },
+          },
+        },
+      },
+    },
     opts = {
       nes = { enabled = false },
       copilot = {
