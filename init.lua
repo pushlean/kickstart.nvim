@@ -290,6 +290,14 @@ require('lazy').setup({
         topdelete = { text = '‾' }, ---@diagnostic disable-line: missing-fields
         changedelete = { text = '~' }, ---@diagnostic disable-line: missing-fields
       },
+      on_attach = function(bufnr)
+        vim.keymap.set(
+          'n',
+          '<leader>gb',
+          require('gitsigns').blame,
+          { buffer = bufnr, desc = 'Open Git blame' }
+        )
+      end,
     },
   },
 
